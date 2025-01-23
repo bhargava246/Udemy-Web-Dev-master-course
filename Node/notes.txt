@@ -3,8 +3,5 @@ server listens at some ports
 
 so basicly frontend request some data from the database and with the help of apis we serve those request
 so we can basicly write whole server in js but it was made to be run on a browser so it has no meathods of interacting with the files and hence node came into picture
-
-
-
 node gives many power to js
   
