@@ -4,4 +4,7 @@ server listens at some ports
 so basicly frontend request some data from the database and with the help of apis we serve those request
 so we can basicly write whole server in js but it was made to be run on a browser so it has no meathods of interacting with the files and hence node came into picture
 node gives many power to js
+
   
+nginx a server used to serve requests on the server the frontend would make a request on a port opened by nginx it would listen on the port and find those files and serve on that port 
+in the server try concatinating ext if ext is not mentioned in the req
