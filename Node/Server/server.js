@@ -5,11 +5,14 @@ const path = require('path')
 const port = 3000
 
 const server = http.createServer((req,res)=>{
-   const filePath =  path.join(__dirname, req.url === '/' ?  "index.html" : req.url)
+   let filePath =  path.join(__dirname, req.url === '/' ?  "index.html" : req.url)
    
-   console.log(filePath);
-   const extName = String(path.extname(filePath)).toLowerCase()
-
+  
+   let extName = String(path.extname(filePath)).toLowerCase() 
+   if(extName == ""){
+      extName = ".html";
+      filePath = filePath.concat(extName)
+   }
    const mimeType = {
     '.html': 'text/html',
     '.css': 'text/css',
@@ -28,7 +31,8 @@ const server = http.createServer((req,res)=>{
      }else{
         res.writeHead(200, {"Content-Type": contentType});
         res.end(content, "utf-8")
-     }
+     
+   }
   })
 });
 
